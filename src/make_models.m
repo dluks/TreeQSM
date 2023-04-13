@@ -126,7 +126,7 @@ ninputs = prod([length(in.PatchDiam1) length(in.PatchDiam2Min)...
   length(in.PatchDiam2Max)]);
 
 %% Load data
-matobj = matfile([dataname,'.mat']);
+matobj = matfile(strcat(dataname,'.mat'));
 names = fieldnames(matobj);
 i = 1;
 n = max(size(names));
@@ -205,6 +205,6 @@ for t = 1:nt % trees
     end
     j = j+1;
   end
-  stri = ['results/',savename];
+  stri = strcat('results/',savename);
   save(stri,'QSMs')
 end

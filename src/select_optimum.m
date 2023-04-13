@@ -512,10 +512,10 @@ end
 
 %% Save results
 if nargin == 3
-  str = ['results/OptimalQSMs_',savename];
+  str = strcat('results/OptimalQSMs_',savename);
   save(str,'TreeData','OptModels','OptInputs','OptQSM')
 
-  str = ['results/tree_data_',savename,'.txt'];
+  str = strcat('results/tree_data_',savename,'.txt');
   fid = fopen(str, 'wt');
   fprintf(fid, [repmat('%g\t', 1, size(DataM,2)-1) '%g\n'], DataM.');
   fclose(fid);

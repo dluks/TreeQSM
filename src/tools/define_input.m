@@ -51,7 +51,7 @@ Inputs = inputs;
 
 % If given multiple clouds, extract the names
 if ischar(Clouds) || isstring(Clouds)
-  matobj = matfile([Clouds,'.mat']);
+  matobj = matfile(strcat(Clouds,'.mat'));
   names = fieldnames(matobj);
   i = 1;
   n = max(size(names));

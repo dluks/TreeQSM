@@ -98,19 +98,19 @@ TreeData = change_precision(TreeData); % use less decimals
 NamesD = string(Names);
 
 %% Save the data as text-files
-str = ['results/cylinder_',savename,'.txt'];
+str = strcat('results/cylinder_',savename,'.txt');
 fid = fopen(str, 'wt');
 fprintf(fid, [repmat('%s\t', 1, size(NamesC,2)-1) '%s\n'], NamesC.');
 fprintf(fid, [repmat('%g\t', 1, size(CylData,2)-1) '%g\n'], CylData.');
 fclose(fid);
 
-str = ['results/branch_',savename,'.txt'];
+str = strcat('results/branch_',savename,'.txt');
 fid = fopen(str, 'wt');
 fprintf(fid, [repmat('%s\t', 1, size(NamesB,2)-1) '%s\n'], NamesB.');
 fprintf(fid, [repmat('%g\t', 1, size(BranchData,2)-1) '%g\n'], BranchData.');
 fclose(fid);
 
-str = ['results/treedata_',savename,'.txt'];
+str = strcat('results/treedata_',savename,'.txt');
 fid = fopen(str, 'wt');
 NamesD(:,2) = TreeData;
 fprintf(fid,'%s\t %g\n',NamesD.');

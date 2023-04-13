@@ -466,7 +466,7 @@ for h = 1:nd
         if inputs.savemat
           str = [inputs.name,'_t',num2str(inputs.tree),'_m',...
             num2str(inputs.model)];
-          save(['results/QSM_',str],'QSM')
+          save(strcat('results/QSM_',str),'QSM')
         end
         % text-format (.txt)
         if inputs.savetxt

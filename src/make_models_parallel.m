@@ -213,6 +213,12 @@ for t = 1:nt % trees
   end
   % Save the models
   for j = 1:Nmodels
+    % Temporary fix for when qsm is empty
+    if max(size(qsms{j})) == 0
+      qsms{j} = struct('cylinder',{},'branch',{},'treedata',{},...
+        'rundata',{},'pmdistance',{},'triangulation',{});
+      qsm{j}(ninputs).treedata = 0;
+    end
     QSM = qsms{j};
     a = max(size(QSM));
     QSMs(m:m+a-1) = QSM;

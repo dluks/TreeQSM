@@ -206,5 +206,5 @@ for t = 1:nt % trees
     j = j+1;
   end
   stri = strcat('results/',savename);
-  save(stri,'QSMs')
+  save(stri,'QSMs', '-v7.3')
 end

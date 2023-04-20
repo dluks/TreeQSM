@@ -152,5 +152,5 @@ end
 %% Save results
 if nargin == 5
   str = strcat('results/OptimalQSMs_',savename);
-  save(str,'TreeData','OptQSMs','OptQSM')
+  save(str,'TreeData','OptQSMs','OptQSM', '-v7.3')
 end

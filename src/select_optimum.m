@@ -513,7 +513,7 @@ end
 %% Save results
 if nargin == 3
   str = strcat('results/OptimalQSMs_',savename);
-  save(str,'TreeData','OptModels','OptInputs','OptQSM')
+  save(str,'TreeData','OptModels','OptInputs','OptQSM', '-v7.3')
 
   str = strcat('results/tree_data_',savename,'.txt');
   fid = fopen(str, 'wt');

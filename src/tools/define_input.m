@@ -72,17 +72,15 @@ inputs(nt).PatchDiam1 = 0;
 
 %% Estimate the PatchDiam and BallRad parameters
 for i = 1:nt
-  if nt > 1
-    % Select point cloud
-    P = matobj.(names{i});
-    inputs(i) = Inputs;
-    inputs(i).name = names{i};
-    inputs(i).tree = i;
-    inputs(i).plot = 0;
-    inputs(i).savetxt = 0;
-    inputs(i).savemat = 0;
-    inputs(i).disp = 0;
-  end
+  % Select point cloud
+  P = matobj.(names{i});
+  inputs(i) = Inputs;
+  inputs(i).name = names{i};
+  inputs(i).tree = i;
+  inputs(i).plot = 0;
+  inputs(i).savetxt = 0;
+  inputs(i).savemat = 0;
+  inputs(i).disp = 0;
 
   %% Estimate the stem diameter close to bottom
   % Define height

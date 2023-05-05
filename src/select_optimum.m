@@ -606,7 +606,11 @@ for i = 1:Nmod
 
     % Collect the treedata values from each model
     for j = 1:Nattri
-      treedata(j,i) = QSMs(i).treedata.(names{j});
+      try
+        treedata(j,i) = QSMs(i).treedata.(names{j});
+      catch
+        disp(strcat("i: ", string(i), "  j: ", string(j)))
+      end
     end
 
   else

@@ -8,7 +8,8 @@ data_dir = "../../../2019_FrenchGuiana/TLS_segmentation/tls2trees/clouds/2023-03
 dirs = dir(data_dir);
 
 for i=1:size(dirs, 1)
-    if dirs(i).isdir && (dirs(i).name ~= "." && dirs(i).name ~= ".." && dirs(i).name ~= "._.DS_Store" && dirs(i).name ~= "0.1" && dirs(i).name ~= "0.2")
+    % if dirs(i).isdir && (dirs(i).name ~= "." && dirs(i).name ~= ".." && dirs(i).name ~= "._.DS_Store" && dirs(i).name ~= "0.1" && dirs(i).name ~= "0.2")
+    if str2double(dirs(i).name) >= 0.1 && str2double(dirs(i).name) <= 0.1
         files = dir(fullfile(dirs(i).folder, dirs(i).name, "leafoff/csv/*.csv"));
         if size(files, 1) > 0
             disp(strcat("Processing directory '", dirs(i).name, "' with ", string(size(files, 1)), " trees"));
